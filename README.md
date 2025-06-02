@@ -13,3 +13,8 @@ npm init -y
 ```
 npm i express sequelize sequelize-cli nodemon mysql2 bcrypt jsonwebtoken cors dotenv swagger-jsdoc swagger-ui-express
 ```
+
+### Iniciar o Sequelize-cli
+```
+npx sequelize-cli init
+```
