@@ -11,7 +11,7 @@ npm init -y
 
 ### Instalar as dependências
 ```
-npm i express sequelize sequelize-cli nodemon mysql2 bcrypt jsonwebtoken cors dotenv swagger-jsdoc swagger-ui-express
+npm i express sequelize sequelize-cli nodemon mysql2 bcrypt jsonwebtoken cors dotenv swagger-jsdoc swagger-ui-express nodemailer
 ```
 
 ### Iniciar o Sequelize-cli
