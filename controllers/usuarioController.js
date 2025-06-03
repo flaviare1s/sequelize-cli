@@ -71,3 +71,35 @@ exports.solicitarVerificacaoEmail = async (req, res) => {
     res.status(400).json({ erro: error.message });
   }
 };
+
+exports.verificarEmail = async (req, res) => {
+  try {
+    const { email, codigo } = req.body;
+    const usuario = await Usuario.findOne({ where: { email } });
+
+    if (!usuario) {
+      return res.status(404).json({ erro: "Usuário não encontrado!" });
+    }
+
+    if (usuario.emailVerificado) {
+      return res.status(400).json({ erro: "Email já verificado!" });
+    }
+
+    if (usuario.codigoVerificacao !== codigo) {
+      return res.status(401).json({ erro: "Código inválido!" });
+    }
+
+    if (new Date() > usuario.codigoExpiracao) {
+      return res.status(401).json({ erro: "Código expirado!" });
+    }
+
+    await usuario.update({
+      emailVerificado: true,
+      codigoVerificacao: null,
+      codigoExpiracao: null,
+    });
+    res.json({ message: "Email verificado com sucesso!" });
+  } catch (error) {
+    res.status(400).json({ erro: message });
+  }
+};

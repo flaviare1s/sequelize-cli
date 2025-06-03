@@ -7,6 +7,10 @@ router.post(
   "/solicitar-verificacao",
   usuarioController.solicitarVerificacaoEmail
 );
+router.post(
+  "/verificar-email",
+  usuarioController.verificarEmail
+);
 router.get("/", usuarioController.listarUsuarios);
 router.get("/:id", usuarioController.buscarUsuarioPorId);
 
