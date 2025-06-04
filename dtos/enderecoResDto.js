@@ -9,7 +9,7 @@ module.exports = {
       cep: endereco.cep,
       complemento: endereco.complemento,
       createdAt: endereco.createdAt,
-      updatedAt: endereco.updatedAt
-    }
-  }
-}
+      updatedAt: endereco.updatedAt,
+    };
+  },
+};

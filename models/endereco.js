@@ -11,6 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Endereco.hasOne(models.Aluno, { foreignKey: 'enderecoId', as: 'alunos' });
+      Endereco.hasOne(models.Professor, { foreignKey: 'enderecoId', as: 'professores' });
     }
   }
   Endereco.init({

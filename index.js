@@ -2,6 +2,7 @@ const dotenv = require("dotenv");
 const express = require("express");
 const usuarioRoutes = require("./routes/usuarioRoutes.js");
 const authRoutes = require("./routes/authRoutes.js");
+const enderecoRoutes = require("./routes/enderecoRoutes.js");
 const PORT = 3000;
 
 dotenv.config();
@@ -13,8 +14,9 @@ app.get("/", (_req, res) => {
   res.send(`API rodando com Sequelize`);
 });
 
-app.use("/usuarios", usuarioRoutes);
+app.use("/", usuarioRoutes);
 app.use("/auth", authRoutes);
+app.use("/", enderecoRoutes);
 
 app.listen(PORT, async () => {
   console.log(`Servidor rodando na porta em http://localhost:${PORT}`);
