@@ -16,12 +16,10 @@ exports.login = async (req, res) => {
     }
 
     if (!usuario.emailVerificado) {
-      return res
-        .status(400)
-        .json({
-          erro: "Email não verificado. Por favor, verifique antes de realizar o login.",
-          email: usuario.email,
-        });
+      return res.status(400).json({
+        erro: "Email não verificado. Por favor, verifique antes de realizar o login.",
+        email: usuario.email,
+      });
     }
 
     const senhaValida = await bcrypt.compare(dados.senha, usuario.senha);

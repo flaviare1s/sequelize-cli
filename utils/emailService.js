@@ -23,14 +23,14 @@ const sendVerificationEmail = async (email, verificationCode) => {
   };
 
   try {
-    await transporter.sendMail(mailOptions)
+    await transporter.sendMail(mailOptions);
     return true;
   } catch (error) {
-    console.log('Erro ao enviar o e-mail', error);
+    console.log("Erro ao enviar o e-mail", error);
     return false;
   }
 };
 
 module.exports = {
-  sendVerificationEmail
-}
+  sendVerificationEmail,
+};
