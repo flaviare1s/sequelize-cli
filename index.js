@@ -14,9 +14,9 @@ app.get("/", (_req, res) => {
   res.send(`API rodando com Sequelize`);
 });
 
-app.use("/", usuarioRoutes);
+app.use("/usuarios", usuarioRoutes);
 app.use("/auth", authRoutes);
-app.use("/", enderecoRoutes);
+app.use("/enderecos", enderecoRoutes);
 
 app.listen(PORT, async () => {
   console.log(`Servidor rodando na porta em http://localhost:${PORT}`);

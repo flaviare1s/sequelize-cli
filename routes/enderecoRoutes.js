@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const enderecoController = require('../controllers/enderecoController.js')
+const enderecoController = require('../controllers/enderecoController');
+const { roleMiddleware, authMiddleware } = require('../middlewares/authMiddleware');
 
-router.post("/enderecos", enderecoController.criarEndereco);
+router.post('/', authMiddleware ,roleMiddleware(['admin']), enderecoController.criarEndereco);
 
 module.exports = router;
