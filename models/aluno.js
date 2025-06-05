@@ -10,7 +10,8 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      // define association here
+      Aluno.belongsTo(models.Endereco, { foreignKey: 'enderecoId', as: 'endereco' });
+      Aluno.belongsTo(models.Usuario, { foreignKey: 'usuarioId', as: 'usuario' });
     }
   }
   Aluno.init({
