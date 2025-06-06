@@ -51,3 +51,10 @@ npx sequelize-cli model:generate --name Avaliacao --attributes alunoId:integer,t
 ```
 npx sequelize-cli db:migrate
 ```
+
+### Integrar com AI
+```
+npm i @google/generative-ai
+```
+
+Gera uma key na Gemini e coloca no .env
