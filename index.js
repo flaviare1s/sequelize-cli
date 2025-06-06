@@ -5,7 +5,7 @@ const authRoutes = require("./routes/authRoutes.js");
 const enderecoRoutes = require("./routes/enderecoRoutes.js");
 const alunoRoutes = require("./routes/alunoRoutes.js");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-
+const cors = require('cors');
 
 const PORT = 4000;
 
@@ -13,6 +13,11 @@ dotenv.config();
 
 const app = express();
 app.use(express.json());
+
+app.use(cors({
+  origin: 'http://localhost:5173',
+  credentials: true
+}))
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
