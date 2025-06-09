@@ -7,7 +7,7 @@ const alunoRoutes = require("./routes/alunoRoutes.js");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
 const cors = require('cors');
 
-const PORT = 4000;
+const PORT = 3000;
 
 dotenv.config();
 
